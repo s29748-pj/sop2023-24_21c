@@ -1,0 +1,7 @@
+1.
+Użycie echo $X wyświetli zawartość zmiennej X jako pojedynczy ciąg tekstowy, usuwając wszelkie znaki nowej linii. W rezultacie wynik będzie trudny do odczytania.
+X=$(ls -l)
+echo -e "$X"
+
+echo -e "$X" interpretuje sekwencje specjalne, co pozwala na wyświetlenie zmiennej w odpowiednim formacie.
+

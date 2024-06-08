@@ -1,0 +1,48 @@
+1. PATH
+
+PATH przechowuje listę katalogów, w których powłoka szuka wykonywalnych plików poleceń.
+Pozwala na uruchamianie programów bez podawania pełnej ścieżki do pliku wykonywalnego.
+
+2. RANDOM
+
+RANDOM zwraca losową liczbę całkowitą za każdym razem, gdy jest wywoływana.
+Może być używana w skryptach do generowania losowych wartości.
+
+3. PWD
+
+PWD przechowuje aktualny katalog roboczy.
+Umożliwia skryptom poznanie bieżącej lokalizacji w systemie plików.
+
+4. PS1
+
+PS1 jest głównym promptem powłoki, który wyświetla się, gdy powłoka oczekuje na wprowadzenie komendy.
+Stosuje się przy personalizacji promptu, aby wyświetlać użytkownika, nazwę hosta, bieżący katalog itp.
+
+5. USER
+
+USER przechowuje nazwę aktualnie zalogowanego użytkownika.
+Umożliwia skryptom działanie w kontekście konkretnego użytkownika.
+
+6. HOSTNAME
+
+HOSTNAME przechowuje nazwę hosta komputera.
+Używane do identyfikacji komputera w sieci.
+
+7. OSTYPE
+
+OSTYPE przechowuje typ systemu operacyjnego.
+Umożliwia skryptom wykonywanie specyficznych operacji w zależności od systemu operacyjnego.
+
+
+Przypisywanie wyniku komendy do zmiennej
+
+Bezpieczny sposób:
+
+'ZM=$(ls -la)' przypisuje wynik komendy ls -la do zmiennej ZM.
+Jest to bezpieczniejszy sposób, ponieważ jest bardziej czytelny i mniej podatny na błędy związane z interpretacją znaków.
+
+Krótszy sposób:
+
+'ZM='ls -la`` przypisuje wynik komendy ls -la do zmiennej ZM.
+Jest to bardziej kompaktowy sposób, ale może nie działać poprawnie w bardziej skomplikowanych skryptach lub przy zagnieżdżaniu komend.
+

@@ -1,0 +1,27 @@
+1. 
+X=tekst tworzy zmienną X i przypisuje jej wartość tekst.
+echo $X wyświetla wartość zmiennej X, czyli tekst.
+bash uruchamia nową instancję powłoki Bash.
+echo $X w nowej powłoce nie wyświetla nic, ponieważ zmienna X nie jest dziedziczona przez nową powłokę.
+
+2.
+Bash interpretuje zmienną X tylko do pierwszej spacji, co powoduje błąd. X=Tekst jest przypisane, a dłuższy jest traktowane jako oddzielne polecenie.
+Użycie cudzysłowów wokół wartości zmiennej pozwala na przypisanie wartości zawierającej spacje.
+
+
+3.
+Podwójne cudzysłowy umożliwiają interpolację zmiennych. Y="tekst:$X" ustawia Y na tekst:Tekst 1, a echo "$Y" wyświetla tekst:Tekst 1.
+Pojedyncze cudzysłowy traktują wszystko dosłownie, bez interpolacji zmiennych. Y='tekst:$X' ustawia Y na tekst:$X, a echo "$Y" wyświetla tekst:$X.
+Bez cudzysłowów, Y=tekst:$X ustawia Y na tekst:Tekst 1, a echo "$Y" wyświetla tekst:Tekst 1.
+
+4.
+Bash interpretuje A i ę oddzielnie, ponieważ A jest bezpośrednio przed ę.
+Użycie echo "$A ma kota, a kot ma ${A}ę" poprawnie łączy zmienną A z literą ę.
+
+5.
+$* i $@ wyświetlają wszystkie argumenty skryptu, ale $* traktuje je jako jeden ciąg, a $@ traktuje każdy argument osobno.
+$0 wyświetla ścieżkę uruchomienia skryptu.
+$# wyświetla liczbę argumentów przekazanych do skryptu.
+$? wyświetla kod zakończenia ostatniego polecenia.
+$$ wyświetla PID procesu bieżącej powłoki.
+$! wyświetla PID ostatnio uruchomionego procesu w tle
